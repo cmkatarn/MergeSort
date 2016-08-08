@@ -8,10 +8,10 @@ public class CodingMergeSort {
     private int[] initial;
     public static void main(String[] args){
         CodingMergeSort demo = new CodingMergeSort();
-        demo.run(args);
+        demo.run();
     }
 
-    public void run(String[] args){
+    public void run(){
         fillArray();
         int[] finalSorted=mergeSort(initial);
         for(int i=0; i<finalSorted.length; i++){
@@ -41,13 +41,7 @@ public class CodingMergeSort {
     }
 
     private static int[] mergeSort(int[] a){
-        if(a.length>1){
-            int[] result = breakArray(a);
-            return result;
-        }else{
-            return a;
-        }
-
+        return a.length == 1 ? a : breakArray(a);
     }
 
     private static int[] mergeArrays(int[] a, int[] b){
